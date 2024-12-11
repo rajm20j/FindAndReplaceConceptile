@@ -1,27 +1,60 @@
-# FindReplace
+# Find and Replace Angular Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+A simple **Find and Replace** web application built with Angular. It provides real-time search, match highlighting, and text replacement functionality within a content-editable text area.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- 🔍 **Find**: Search for specific text in the input area.
+- 🖍 **Replace**: Replace one or all occurrences of the found text.
+- ✅ **Regex Support**: Enable/disable regular expressions for advanced matching.
+- 🅰️ **Case Sensitivity**: Toggle case-sensitive or case-insensitive search.
+- 🖍 **Live Highlighting**: Matches are highlighted in real-time as you type.
+- ❌ **Error Notification**: Displays invalid regular expression errors.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To run this application locally, follow these steps:
 
-## Running unit tests
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/rajm20j/FindAndReplaceConceptile.git
+   cd FindAndReplaceConceptile
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Install Dependencies**:
+   Ensure you have Node.js and Angular CLI installed.
 
-## Running end-to-end tests
+   ```bash
+   npm install
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. **Run the Application**:
+   Start the development server:
 
-## Further help
+   ```bash
+   ng serve
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   Open the app in your browser at:
+
+   ```
+   http://localhost:4200
+   ```
+
+---
+
+## Screen Recording
+
+[Link](https://drive.google.com/file/d/1ggnz_Ona9yI2fswh18hzqOiB0ZTmHnE8/view?usp=sharing)
+
+---
+
+## Deployed Website Link
+
+[Website Link](https://find-and-replace-conceptile.vercel.app/)
+
+---
