@@ -1,0 +1,178 @@
+$primary-color: #1c1c1c;
+$secondary-color: #f2f2f2;
+$border-color: #ccc;
+$highlight-color: yellow;
+$error-color: rgb(239, 88, 88);
+$text-color: #000;
+$placeholder-color: #aaa;
+$accent-color: #ef6d00;
+
+$base-padding: 8px;
+$base-margin: 10px;
+
+$container-max-width: 640px;
+$textarea-min-height: 200px;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+:host {
+  margin-inline: $base-margin;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+
+  .error-notif {
+    position: fixed;
+    width: $container-max-width;
+    top: $base-margin;
+    background-color: $error-color;
+    padding: $base-padding;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .matches-container {
+    width: 100%;
+    text-align: end;
+    color: $placeholder-color;
+  }
+
+  .editable-textarea {
+    width: 100%;
+    min-height: $textarea-min-height;
+    border: 1px solid $border-color;
+    padding: $base-padding;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: pre-wrap;
+
+    &:focus {
+      outline: 2px solid $primary-color;
+    }
+
+    &[placeholder]:empty:before {
+      content: attr(placeholder);
+      color: $placeholder-color;
+    }
+  }
+
+  .fnr-controls {
+    width: 100%;
+    margin-top: $base-margin;
+
+    input {
+      width: 100%;
+      padding: $base-padding;
+      border: 1px solid $border-color;
+    }
+
+    .highlight {
+      background-color: $highlight-color;
+      font-weight: bold;
+    }
+
+    .find-section,
+    .replace-section {
+      @include flex-center;
+      justify-content: space-between;
+      margin-top: $base-margin;
+
+      .find-input,
+      .replace-input {
+        flex: 2;
+        box-sizing: border-box;
+      }
+    }
+
+    .replace-buttons {
+      @include flex-center;
+      flex: 1;
+      justify-content: flex-end;
+
+      .replace-one-btn {
+        margin-right: calc($base-margin / 4);
+      }
+
+      button {
+        padding: $base-padding (
+          $base-padding * 1.25
+        );
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $accent-color;
+      }
+    }
+  }
+
+  .regex-icon {
+    border: 1px solid $border-color;
+    border-left: none;
+    padding: $base-padding;
+    user-select: none;
+    cursor: pointer;
+    transition: all 250ms;
+    font-size: 0.75rem;
+
+    &:hover {
+      background-color: $accent-color;
+      color: white;
+    }
+  }
+
+  .match-count,
+  .regex-error {
+    font-size: 0.9em;
+  }
+
+  .match-count {
+    color: $secondary-color;
+  }
+
+  .regex-error {
+    color: $error-color;
+  }
+
+  .regex-toggle {
+    @include flex-center;
+
+    input {
+      width: auto;
+    }
+  }
+
+  .btn-active {
+    background-color: $accent-color;
+    color: white;
+  }
+}
+}
+
+@media screen and (max-width: $container-max-width) {
+  .replace-section {
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .replace-buttons {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      margin-top: $base-margin;
+    }
+  }
+}
